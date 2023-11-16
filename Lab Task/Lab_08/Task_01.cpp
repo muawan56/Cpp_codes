@@ -39,48 +39,48 @@ public:
     const char *getFirstName() const { return fName; }
     int getRuns() const { return runs; }
 
-    Player(const Player &other)
+    Player(const Player &original)
     {
-        copyString(fName, other.fName);
-        copyString(sName, other.sName);
-        copyString(country, other.country);
-        copyString(span, other.span);
-        noOfMatches = other.noOfMatches;
-        noOfInnings = other.noOfInnings;
-        noOfNotOuts = other.noOfNotOuts;
-        runs = other.runs;
-        highest = other.highest;
-        average = other.average;
-        ballsFaced = other.ballsFaced;
-        strikeRate = other.strikeRate;
-        noOf100s = other.noOf100s;
-        noOf50s = other.noOf50s;
-        noOfZeros = other.noOfZeros;
-        noOf4s = other.noOf4s;
-        noOf6s = other.noOf6s;
+        copyString(fName, original.fName);
+        copyString(sName, original.sName);
+        copyString(country, original.country);
+        copyString(span, original.span);
+        noOfMatches = original.noOfMatches;
+        noOfInnings = original.noOfInnings;
+        noOfNotOuts = original.noOfNotOuts;
+        runs = original.runs;
+        highest = original.highest;
+        average = original.average;
+        ballsFaced = original.ballsFaced;
+        strikeRate = original.strikeRate;
+        noOf100s = original.noOf100s;
+        noOf50s = original.noOf50s;
+        noOfZeros = original.noOfZeros;
+        noOf4s = original.noOf4s;
+        noOf6s = original.noOf6s;
     }
 
-    Player &operator=(const Player &other)
+    Player &operator=(const Player &original)
     {
-        if (this != &other)
+        if (this != &original)
         {
-            copyString(fName, other.fName);
-            copyString(sName, other.sName);
-            copyString(country, other.country);
-            copyString(span, other.span);
-            noOfMatches = other.noOfMatches;
-            noOfInnings = other.noOfInnings;
-            noOfNotOuts = other.noOfNotOuts;
-            runs = other.runs;
-            highest = other.highest;
-            average = other.average;
-            ballsFaced = other.ballsFaced;
-            strikeRate = other.strikeRate;
-            noOf100s = other.noOf100s;
-            noOf50s = other.noOf50s;
-            noOfZeros = other.noOfZeros;
-            noOf4s = other.noOf4s;
-            noOf6s = other.noOf6s;
+            copyString(fName, original.fName);
+            copyString(sName, original.sName);
+            copyString(country, original.country);
+            copyString(span, original.span);
+            noOfMatches = original.noOfMatches;
+            noOfInnings = original.noOfInnings;
+            noOfNotOuts = original.noOfNotOuts;
+            runs = original.runs;
+            highest = original.highest;
+            average = original.average;
+            ballsFaced = original.ballsFaced;
+            strikeRate = original.strikeRate;
+            noOf100s = original.noOf100s;
+            noOf50s = original.noOf50s;
+            noOfZeros = original.noOfZeros;
+            noOf4s = original.noOf4s;
+            noOf6s = original.noOf6s;
         }
         return *this;
     }
