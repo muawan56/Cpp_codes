@@ -1,0 +1,58 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+char* copyString(char *t, const char *s){
+	for (int i=0;true;i++){
+		t[i] = s[i];
+		if (s[i] ==  0)	return t;
+	}
+}
+void printHeading(){
+	cout << " Name           Country           Span      MC  IC   NO  RS   HS  AVE   BF   SR  100s 50s 0's 4s  6s\n";
+	cout << "-----------------------------------------------------------------------------------------------------\n";
+}
+	
+class Player{
+	char fName[11],	sName[12],	country[13], span[10];
+	//write further data members here
+public:
+	Player(){}
+	readValues(ifstream &in){
+		in >> fName >> sName >> country >> span;
+		in.clear();
+		in >> noOfMatches >> noOfInnings >> noOfNotOuts >> runs >> highest;
+		in >> average >> ballsFaced >> strikeRate >> noOf100s >> noOf50s;
+		in >> noOfZeros >> noOf4s >> noOf6s;
+	}
+	//write further member function here
+	
+};
+class PlayersList{
+	int playersCount;
+	Player *players;
+public:
+	PlayersList(){
+		ifstream in("T20.txt");
+		if (in.fail())		{cout << "Error";	playersCount=0; return;}
+		//write code to complete this code
+	}
+	//write further member function here
+};
+int main(){
+	int temp;
+	PlayersList list;
+	list.searchByFirstName("Babar");
+	cin>>temp;
+	list.showPlayersGreaterThanEqualRuns(25000);
+	cin>>temp;
+	list.showPlayersGreaterThanEqualRuns(2500);
+	cin>>temp;
+	list.sortPlayers();
+	list.showAll();	
+	return 0;
+}
