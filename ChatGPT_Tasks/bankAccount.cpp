@@ -87,13 +87,12 @@ public:
     {
 
         srand(static_cast<unsigned>(time(0)));
-
-        static double account_num = rand() % 99999 + 100000;
-        cout << account_num << endl;
+        return rand() % 99999 + 100000;
     }
 
     void display() const
     {
+        cout << "\n\nAccount: " << totalAccount << "\n-----------------------------------" << '\n';
         cout << "Account holder name: " << getCustomerName() << endl;
         cout << "Account Number is " << getAccountNum() << endl;
         cout << "Your balance is $" << getBalance() << endl;
@@ -102,7 +101,7 @@ public:
 
     ~BankAccount()
     {
-        cout << "Account "<<customer_name<<" has been closed." << endl;
+        cout << "Account " << customer_name << " has been closed." << endl;
     }
 };
 
@@ -118,7 +117,7 @@ int main()
     b.accountNumbers();
     BankAccount b1(44332, 10003, "Bilal Awan");
     b1.display();
-    BankAccount b2(1122,29994, "Talha");
+    BankAccount b2(1122, 29994, "Talha");
     b2.display();
 
     return 0;
