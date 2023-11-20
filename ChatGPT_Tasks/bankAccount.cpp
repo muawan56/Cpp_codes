@@ -102,7 +102,7 @@ public:
 
     ~BankAccount()
     {
-        cout << "Process is completed." << endl;
+        cout << "Account "<<customer_name<<" has been closed." << endl;
     }
 };
 
@@ -116,8 +116,10 @@ int main()
     b.withdraw(6000);
     b.withdraw(2);
     b.accountNumbers();
-    BankAccount b1(44332, 10003112, "Bilal Awan");
+    BankAccount b1(44332, 10003, "Bilal Awan");
     b1.display();
+    BankAccount b2(1122,29994, "Talha");
+    b2.display();
 
     return 0;
 }
