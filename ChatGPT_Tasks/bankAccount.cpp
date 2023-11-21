@@ -1,3 +1,9 @@
+/*Create a class for a bank account that includes the following features:
+
+Encapsulate the account details (account number, balance, customer name)
+Implement methods for depositing, withdrawing, and checking the balance
+Implement static methods for generating unique account numbers and tracking the total number of accounts*/
+
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -17,12 +23,17 @@ public:
     BankAccount() : account_num(0), balance(0.00), customer_name("")
     {
     }
+
+    // Overloaded Constructor
     BankAccount(double account_num, double balance, string customer_name) : account_num(account_num), balance(balance), customer_name(customer_name)
     {
         totalAccount += 1;
     }
+
+    // COPY constructor
     BankAccount(const BankAccount &orig) : balance(orig.balance), customer_name(orig.customer_name) {}
 
+    // GETTERS functions
     double getAccountNum() const
     {
         return account_num;
@@ -41,6 +52,7 @@ public:
         return totalAccount;
     }
 
+    // SETTER functions
     void setAccountNum(const double account_num)
     {
         this->account_num = account_num;
@@ -60,6 +72,7 @@ public:
         cout << "You have deposited $" << newBalance << ". Your new balance is $" << balance << endl;
     }
 
+    // To withdraw amount
     void withdraw(double withdraw)
     {
         if (balance >= withdraw)
@@ -78,11 +91,13 @@ public:
         }
     }
 
+    // To check balance
     void checking() const
     {
         cout << "You have $" << getBalance() << " amount in your account." << endl;
     }
 
+    // To generate random number
     static double accountNumbers()
     {
 
@@ -90,6 +105,7 @@ public:
         return rand() % 99999 + 100000;
     }
 
+    // To display details
     void display() const
     {
         cout << "\n\nAccount: " << totalAccount << "\n-----------------------------------" << '\n';
@@ -99,6 +115,7 @@ public:
         cout << "Total accounts: " << totalAccount << endl;
     }
 
+    // DESTRUCTOR
     ~BankAccount()
     {
         cout << "Account " << customer_name << " has been closed." << endl;
